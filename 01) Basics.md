@@ -15,6 +15,15 @@ Terraform is used to automate the provisioning and management of cloud infrastru
 4) Multi-cloud support – Terraform allows you to work across AWS, Azure, GCP, etc. using the same syntax.
 5) Collaboration & Team workflows – Teams can collaborate better on infrastructure via shared codebase + remote state.
 
+Terraform हे Infrastructure as Code (IaC) साठी वापरलं जातं.  
+Infrastructure म्हणजे —  
+✅ AWS मधलं EC2 instance,  
+✅ VPC, Subnet, Security Groups,  
+✅ Azure VM,  
+✅ GCP Kubernetes cluster,  
+✅ DB instances, Load Balancers... etc.  
+हे सगळं आपण जर manually create केलं, तर human errors होतात, repeatable नाही, आणि time-consuming आहे.  
+
 | Feature                          | Description                                                                          |
 | -------------------------------- | ------------------------------------------------------------------------------------ |
 | **Declarative Language (HCL)**   | Uses **HCL (HashiCorp Configuration Language)** – a declarative language. तुम्ही सांगता "मला हे पाहिजे", Terraform internally ठरवतो "कसं करायचं". |
