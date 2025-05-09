@@ -45,3 +45,7 @@ Infrastructure म्हणजे —
 | **Chef / Puppet**               | Traditional config mgmt tools                                | Terraform is more modern, *easier to start*, and cloud-first           |
 | **CDK (Cloud Development Kit)** | AWS tool for writing infra using real code (Python, TS, etc) | Terraform is *more widely used* and has a bigger ecosystem             |
 
+### Summary:
+Terraform हे एक modern, cloud-agnostic, powerful IaC tool आहे.  
+हे repeatable, scalable, आणि version-controlled infrastructure साठी वापरलं जातं.  
+Terraform ला alternatives आहेत, पण multi-cloud, HCL simplicity, आणि community ecosystem मुळे ते अजूनही industry-standard tool आहे.  
