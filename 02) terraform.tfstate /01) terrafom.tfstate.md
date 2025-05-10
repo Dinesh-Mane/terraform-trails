@@ -76,6 +76,47 @@ aws s3api copy-object \
   --key path/to/terraform.tfstate
 ```
 This command copies the older version and overwrites the current one, effectively restoring it.
+
+### OR simply create a bash file like this
+```bash
+#!/bin/bash
+
+# Variables
+BUCKET_NAME="my-terraform-states"
+REGION="us-east-1"
+DYNAMODB_TABLE="terraform-lock-table"
+
+echo "Creating S3 bucket: $BUCKET_NAME"
+aws s3api create-bucket \
+  --bucket "$BUCKET_NAME" \
+  --region "$REGION" \
+  --create-bucket-configuration LocationConstraint="$REGION"
+
+echo "Enabling versioning on bucket: $BUCKET_NAME"
+aws s3api put-bucket-versioning \
+  --bucket "$BUCKET_NAME" \
+  --versioning-configuration Status=Enabled
+
+echo "Checking versioning status:"
+aws s3api get-bucket-versioning --bucket "$BUCKET_NAME"
+
+echo "Creating DynamoDB table: $DYNAMODB_TABLE"
+aws dynamodb create-table \
+  --table-name "$DYNAMODB_TABLE" \
+  --attribute-definitions AttributeName=LockID,AttributeType=S \
+  --key-schema AttributeName=LockID,KeyType=HASH \
+  --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
+  --region "$REGION"
+
+echo "✅ S3 + versioning and DynamoDB lock table setup complete."
+```
+> This bash script automates the setup of an S3 bucket with versioning and a DynamoDB table for Terraform remote backend state management and locking.
+
+**How to use:** 
+- Save the file as `setup-s3-versioning.sh` ( [Setup S3 Versioning Script]() )  
+- Make it executable: `chmod +x setup-s3-versioning.sh`  
+- Run it: `./setup-s3-versioning.sh`  
+
 ## Benefits of S3 Versioning for Terraform State
 Accidental corruption? Easily roll back.  
 Mistaken `terraform destroy`? Recover previous working state.  
