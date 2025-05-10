@@ -39,7 +39,8 @@ In CI/CD pipelines, Terraform must use a remote state to:
 - Integrate secrets management
 - Support locking and audit logging
 
-# Real-world Example: Using AWS (S3 + DynamoDB)
+# Real-world Example: Using AWS (S3 + DynamoDB) 
+[Terraform Backend File](02%29%20backend.tf)
 ```hcl
 terraform {
   backend "s3" {
