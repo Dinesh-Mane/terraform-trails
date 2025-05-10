@@ -1,3 +1,5 @@
+# This bash script automates the setup of an S3 bucket with versioning and a DynamoDB table for Terraform remote backend state management and locking.
+
 #!/bin/bash
 
 # Variables
