@@ -130,7 +130,7 @@ aws s3api copy-object \
 This command copies the older version and overwrites the current one, effectively restoring it.
 ## Benefits of S3 Versioning for Terraform State
 Accidental corruption? Easily roll back.  
-Mistaken terraform destroy? Recover previous working state.  
+Mistaken `terraform destroy`? Recover previous working state.  
 Like Git for your infrastructure state.  
 
 **Tip:** Not every company enables versioning — but those who care about state recovery and disaster preparedness always do, especially in production. It’s a recommended best practice for all real-world Terraform projects.
