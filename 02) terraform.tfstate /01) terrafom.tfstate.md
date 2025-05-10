@@ -113,7 +113,7 @@ echo "✅ S3 + versioning and DynamoDB lock table setup complete."
 > This bash script automates the setup of an S3 bucket with versioning and a DynamoDB table for Terraform remote backend state management and locking.
 
 **How to use:** 
-- Save the file as `setup-s3-versioning.sh` ( [Setup S3 Versioning Script]() )  
+- Save the file as `setup-s3-versioning.sh` ( [Setup S3 Script](03%29%20setup-s3-versioning.sh) )  
 - Make it executable: `chmod +x setup-s3-versioning.sh`  
 - Run it: `./setup-s3-versioning.sh`  
 
