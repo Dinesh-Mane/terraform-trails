@@ -29,4 +29,4 @@ aws dynamodb create-table \
   --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
   --region "$REGION"
 
-echo "✅ S3 + versioning and DynamoDB lock table setup complete."
+echo "S3 + versioning and DynamoDB lock table setup complete."
